@@ -22,6 +22,7 @@ public class StockAPIService {
 	public double getPrice(String symbol) throws IOException {
         String url = String.format(apiPath, symbol);
         String result = remoteURLReader.readFromUrl(url);
+		System.out.println(result);
         JSONObject json = new JSONObject(result);
         String price = json.get("price").toString();
         return Double.parseDouble(price);
