@@ -20,8 +20,8 @@ public class Trader {
 	 * 	@return whether any stock was bought */
 	public boolean buy(String symbol, double bid) throws IOException {
 		double price = stockService.getPrice(symbol);
-
         boolean result;
+
 		if (price <= bid) {
 			result = true;
 			stockService.buy(symbol);
